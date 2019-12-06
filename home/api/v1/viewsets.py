@@ -1,3 +1,4 @@
+from rest_framework import authentication
 from rest_framework import viewsets
 import json
 from .serializers import CustomTextSerializer, HomePageSerializer

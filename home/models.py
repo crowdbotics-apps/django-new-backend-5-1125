@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 
 # Create your models here.
@@ -7,7 +8,14 @@ from django.db import models
 
 class CustomText(models.Model):
     title = models.CharField(max_length=150,)
-    dada = models.BigIntegerField(blank=True, null=True,)
+    dada = models.BigIntegerField(null=True, blank=True,)
+    r1 = models.ForeignKey(
+        "home.HomePage",
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+        related_name="customtext_r1",
+    )
 
     def __str__(self):
         return self.title
